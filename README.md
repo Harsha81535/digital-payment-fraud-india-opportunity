@@ -6,7 +6,11 @@
 Prepared by **Harshana**  
 MBA Finance, IMT Ghaziabad
 
-[**Explore the Live Dashboard**](https://fraudlens-india-tjfy2aqxyar6wwvxo2umky.streamlit.app/)
+## 🚀 Explore FraudLens India
+
+### **[↗ OPEN THE LIVE INTERACTIVE DASHBOARD](https://fraudlens-india-tjfy2aqxyar6wwvxo2umky.streamlit.app/)**
+
+*Explore the data, test the economics, and examine the commercial recommendation.*
 
 ---
 
