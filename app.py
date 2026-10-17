@@ -149,10 +149,10 @@ with start_tab:
     </div>
     """, unsafe_allow_html=True)
     journey = [
-        ("01", "Get The Context", "RBI data for reported fraud. NPCI data for UPI growth. Two different lenses, not one fraud-rate calculation.", "#2E86DE"),
-        ("02", "Check The Data", "Clean dates and numbers, check gaps and duplicates, and reconcile transaction IDs and labels.", "#17A589"),
-        ("03", "Look At What Exists", "Review commercial fraud platforms and public or shared-intelligence initiatives before assuming the market needs another tool.", "#9B59B6"),
-        ("04", "Test The Business Case", "Model a narrower workflow idea with editable assumptions, then list what real buyers would need to confirm.", "#E67E22"),
+        ("01", "Get the Context", "RBI data for reported fraud. NPCI data for UPI growth. Two different lenses, not one fraud-rate calculation.", "#2E86DE"),
+        ("02", "Check the Data", "Clean dates and numbers, check gaps and duplicates, and reconcile transaction IDs and labels.", "#17A589"),
+        ("03", "Look at what exists", "Review commercial fraud platforms and public or shared-intelligence initiatives before assuming the market needs another tool.", "#9B59B6"),
+        ("04", "Test the Business Case", "Model a narrower workflow idea with editable assumptions, then list what real buyers would need to confirm.", "#E67E22"),
     ]
     journey_cols = st.columns(4)
     for col, (num, heading, body, accent) in zip(journey_cols, journey):
@@ -178,10 +178,10 @@ with start_tab:
     """, unsafe_allow_html=True)
 
     st.divider()
-    st.markdown("### The Evidence We Used")
+    st.markdown("### The Evidence we used")
     st.markdown("""
     <div style="margin:8px 0 16px;padding:13px 16px;border-radius:10px;background:#172d43;border-left:4px solid #58a6ff;">
-      <div style="font-size:1rem;line-height:1.55;color:#f0f6fc;font-weight:750;">Why These Datasets?</div>
+      <div style="font-size:1rem;line-height:1.55;color:#f0f6fc;font-weight:750;">Why these Datasets?</div>
       <div style="font-size:1rem;line-height:1.6;color:#d5e2ef;margin-top:3px;">Each source answers a different part of the question. Together they give us context, a way to demonstrate analysis, and a view of existing solutions. None can prove the whole market opportunity on its own.</div>
     </div>
     """, unsafe_allow_html=True)
@@ -189,7 +189,7 @@ with start_tab:
         ("RBI Reported Fraud", "30 monthly observations", "Sep 2022 to Feb 2025", "Shows reported domestic payment-fraud volume, amount involved and related indicators. It is not UPI-only data.", "#2E86DE"),
         ("NPCI UPI Activity", "48 monthly observations", "Apr 2022 to Mar 2026", "Shows UPI transaction scale, value and ecosystem participation. It is not a fraud numerator.", "#17A589"),
         ("Synthetic Transactions", "20,000 generated rows", "Transaction file + label file", "Lets us demonstrate data checks and explore risk signals. The labels are generated, not real fraud outcomes.", "#9B59B6"),
-        ("Market And Vendor Research", "Public descriptions and case studies", "Commercial + public initiatives", "Helps map existing alternatives and questions to test. Marketing claims are not treated as independently proven ROI.", "#E67E22"),
+        ("Market and Vendor Research", "Public descriptions and case studies", "Commercial + public initiatives", "Helps map existing alternatives and questions to test. Marketing claims are not treated as independently proven ROI.", "#E67E22"),
     ]
     src_cols = st.columns(4)
     for col, (heading, count, period, body, accent) in zip(src_cols, sources):
@@ -204,7 +204,7 @@ with start_tab:
             """, unsafe_allow_html=True)
 
     st.divider()
-    st.markdown("### What Was Cleaned And Checked")
+    st.markdown("### What was Cleaned and Checked")
     st.markdown("""
     <div style="margin:8px 0 16px;padding:13px 16px;border-radius:10px;background:#172d43;border-left:4px solid #58a6ff;">
       <div style="font-size:1rem;line-height:1.55;color:#f0f6fc;font-weight:750;">Why Clean And Validate The Data?</div>
@@ -213,9 +213,9 @@ with start_tab:
     """, unsafe_allow_html=True)
     clean_cols = st.columns(4)
     checks = [
-        ("Dates And Structure", "Parsed month fields consistently and checked that monthly coverage made sense."),
+        ("Dates and Structure", "Parsed month fields consistently and checked that monthly coverage made sense."),
         ("Numeric Measures", "Converted source values into numeric fields and checked the UPI average transaction value unit conversion."),
-        ("Missing Values And Duplicates", "Checked gaps, duplicate months, duplicate transaction IDs and missing cells."),
+        ("Missing Values and Duplicates", "Checked gaps, duplicate months, duplicate transaction IDs and missing cells."),
         ("Cross-File Reconciliation", "Matched transaction IDs and compared the generated fraud labels across both CSV files."),
     ]
     for col, (heading, body) in zip(clean_cols, checks):
@@ -245,7 +245,7 @@ with start_tab:
     st.warning("**Keep this distinction in mind:** the RBI series and UPI activity series describe different populations. The synthetic sample is generated data. These are useful research inputs, but they cannot be combined into a real UPI fraud rate.")
 
     st.divider()
-    st.markdown("### Where The Research Landed")
+    st.markdown("### Where the Research landed")
     left, right = st.columns([1.3, 1])
     with left:
         st.write("The most testable direction so far is a narrow workflow problem at financial institutions: evidence retrieval, response preparation, exception routing and complaint or law-enforcement request handling.")
@@ -254,14 +254,14 @@ with start_tab:
         st.markdown("""
         <div style="border:1px solid #5a4a25;background:#302817;border-radius:12px;padding:18px;">
           <div style="font-size:.82rem;text-transform:uppercase;letter-spacing:.08em;font-weight:750;color:#f6c66b;">Current Call</div>
-          <div style="font-size:1.25rem;font-weight:800;color:#fff4d8;margin:8px 0;">Explore Further. Do Not Launch Yet.</div>
+          <div style="font-size:1.25rem;font-weight:800;color:#fff4d8;margin:8px 0;">Explore Further. Do not launch yet.</div>
           <div style="color:#e8ddc5;line-height:1.5;">We still need buyer interviews, real workflow baselines, cost estimates and a measured pilot.</div>
         </div>
         """, unsafe_allow_html=True)
     st.caption("This is a structured first point of view, not a final verdict. The value is in making the evidence, assumptions and next questions visible.")
 
 with market_tab:
-    st.markdown("### Two Different Lenses: Reported Fraud And UPI Growth")
+    st.markdown("### Two Different Lenses: Reported Fraud and UPI Growth")
     st.caption("What this page is trying to show: how reported fraud indicators and UPI activity moved over time, without pretending they measure the same thing.")
     st.caption("Each dot is one observed monthly value from the source data. The chart does not create in-between monthly observations or interpolate missing data.")
     left, right = st.columns(2)
@@ -379,7 +379,7 @@ with market_tab:
 
 with synthetic_tab:
     st.markdown("### Synthetic Transaction Exploration")
-    st.caption("Why this page exists: demonstrate the analysis workflow and data-quality checks. It cannot tell us the real-world fraud rate or which app is safest.")
+    st.caption("Why this page exists: Demonstrate the analysis workflow and data-quality checks. It cannot tell us the real-world fraud rate or which app is safest.")
     st.caption("This dataset is a sandbox for demonstrating analysis, not a sample of real UPI transactions.")
     st.markdown("""
     <div style="padding:16px 18px;border:1px solid #35546e;border-radius:12px;background:#152635;margin:10px 0 16px;">
@@ -424,7 +424,7 @@ with synthetic_tab:
             fig = px.bar(tab, x=sig, y="fraud_label_rate_pct", text="records", title=f"Generated label rate by {sig}")
             st.plotly_chart(fig, use_container_width=True)
             st.dataframe(tab.drop(columns="fraud_label_rate").round(2), hide_index=True, use_container_width=True)
-            st.markdown("#### What Do We Do With This Analysis?")
+            st.markdown("#### What do we do with this Analysis?")
             st.markdown("""
             <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:8px 0 14px;">
               <div style="padding:14px;border:1px solid #343b46;border-radius:11px;background:#171c24;"><div style="font-weight:800;color:#f4f6f8;">1. Demonstrate The Workflow</div><div style="color:#cbd3dd;line-height:1.5;margin-top:7px;">Check IDs, missing values, label balance and differences between groups.</div></div>
@@ -432,10 +432,10 @@ with synthetic_tab:
               <div style="padding:14px;border:1px solid #8b4545;border-radius:11px;background:#321d21;"><div style="font-weight:800;color:#ffaaaa;">3. Do Not Use It To Claim A Market Gap</div><div style="color:#ead0d0;line-height:1.5;margin-top:7px;">These results do not support real fraud rates, provider rankings, control effectiveness or our final commercial recommendation.</div></div>
             </div>
             """, unsafe_allow_html=True)
-            st.info("**How this connects to the wider project:** this synthetic dataset is a methods demonstration only. The opportunity hypothesis comes from the desk research and must be tested with real bank workflows, buyer interviews and baseline operating data. We do not use these generated labels to justify the post-complaint workflow idea.")
+            st.info("**How this connects to the wider project:** This synthetic dataset is a methods demonstration only. The opportunity hypothesis comes from the desk research and must be tested with real bank workflows, buyer interviews and baseline operating data. We do not use these generated labels to justify the post-complaint workflow idea.")
 
 with economics_tab:
-    st.markdown("### Could A Workflow Tool Pay For Itself?")
+    st.markdown("### Could a Workflow tool pay for itself?")
     st.caption("The question: how much work might be freed up, what would that capacity be worth, and would it cover the software and implementation costs?")
     st.markdown("This is a **what-if calculator**, not a forecast. The starting numbers are illustrative assumptions, not bank-validated data or a vendor quote.")
     st.markdown("**Use this page to test the business case, not to claim that a bank will save this amount.**")
@@ -450,7 +450,7 @@ with economics_tab:
         """)
         st.caption("Important: capacity value is not automatically cash savings. It becomes a realised financial benefit only if costs are reduced, hiring is avoided, or the freed-up time is productively redeployed. The model also excludes taxes, financing, change-management costs and any benefits not entered here.")
 
-    st.markdown("#### 1. Set The Operating Assumptions")
+    st.markdown("#### 1. Set the Operating Assumptions")
     c1, c2, c3 = st.columns(3)
     cases = c1.number_input("Cases Handled Per Year", min_value=0, value=50000, step=5000, help="Annual complaint or request volume for the workflow being tested.")
     hours = c2.number_input("Manual Hours Per Case", min_value=0.0, value=0.75, step=0.05, help="Average staff time spent on one case today.")
@@ -469,7 +469,7 @@ with economics_tab:
     payback = implementation / net * 12 if net > 0 else None
     covered_cases = cases * coverage
 
-    st.markdown("#### 2. Read The Output")
+    st.markdown("#### 2. Read the Output")
     st.caption("All money figures below are in ₹ lakh per year unless labelled otherwise.")
     a, b, c, d = st.columns(4)
     a.metric("Current Annual Processing Cost", f"₹{current:,.1f} Lakh")
@@ -478,7 +478,7 @@ with economics_tab:
     d.metric("Value After Annual Fee", f"₹{net:,.1f} Lakh", help="Gross capacity value minus annual solution cost. This is not guaranteed cash savings.")
 
     e, f = st.columns(2)
-    e.metric("First-Year Value After All Listed Costs", f"₹{first_year:,.1f} Lakh", help="Gross capacity value minus annual solution cost and one-time implementation cost.")
+    e.metric("First-Year Value After all Listed Costs", f"₹{first_year:,.1f} Lakh", help="Gross capacity value minus annual solution cost and one-time implementation cost.")
     if payback is None:
         f.metric("Simple Implementation Payback", "Not Reached")
     else:
@@ -491,7 +491,7 @@ with economics_tab:
     else:
         st.success("The assumptions produce a positive modelled first-year value. Treat this as a hypothesis to validate, not a confirmed saving.")
 
-    st.markdown("#### 3. What Would Need To Be True In A Real Bank?")
+    st.markdown("#### 3. What would need to be True in a Real Bank?")
     gate1, gate2, gate3 = st.columns(3)
     gate1.markdown("**Baseline**\n\nConfirm case volume, time per case, backlog, rework and loaded staff cost using actual workflow data.")
     gate2.markdown("**Feasibility**\n\nMeasure what share of cases can actually be automated, how much time is saved, and what exceptions still need a person.")
@@ -499,9 +499,9 @@ with economics_tab:
     st.caption("The base case is 50,000 cases, 0.75 hours per case, ₹1,000 per hour, 50% coverage, 40% effort reduction, ₹35 lakh annual solution cost and ₹30 lakh implementation. These assumptions are illustrative and have not been validated with a bank.")
 
 with competition_tab:
-    st.markdown("### Existing Solutions: What Are We Up Against?")
-    st.caption("Why this page exists: check whether the proposed idea is genuinely different from what banks can already buy or access. A new product needs a clear gap, not just a fresh AI label.")
-    st.markdown("#### Commercial Platforms Already Cover A Lot")
+    st.markdown("### Existing Solutions: What are we up against?")
+    st.caption("Why this page exists: To comprehend if the proposed idea is genuinely different from what banks can already buy or access. A new product needs a clear gap, not just a fresh AI label.")
+    st.markdown("#### Commercial Platforms already cover a lot!")
     st.write("These vendors describe established fraud-decisioning capabilities. Their claims help us map the market, but they are not a like-for-like benchmark and do not prove performance in every Indian bank.")
     vendor_cols = st.columns(3)
     vendors = [
@@ -537,7 +537,7 @@ with competition_tab:
             """, unsafe_allow_html=True)
 
     st.divider()
-    st.markdown("#### Shared Intelligence Is Also Part Of The Picture")
+    st.markdown("#### Shared Intelligence is also part of the picture")
     st.write("Not every alternative is a vendor platform. Public and shared-intelligence initiatives may provide signals that banks can use alongside their own controls. These are different layers, and we should not assume a specific bank's architecture without evidence.")
     infra_cols = st.columns(2)
     with infra_cols[0]:
@@ -558,7 +558,7 @@ with competition_tab:
         """, unsafe_allow_html=True)
 
     st.divider()
-    st.markdown("#### So, Where Could A Real Opportunity Be?")
+    st.markdown("#### So, Where could a Real Opportunity be?")
     st.markdown("""
     <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;">
       <div style="padding:16px;border:1px solid #3a414b;border-radius:12px;background:#171c24;"><div style="font-weight:800;color:#f5f7fa;">Probably Not Enough</div><div style="color:#cbd3dd;margin-top:8px;line-height:1.5;">"We use AI to detect fraud." Existing vendors already market this.</div></div>
@@ -566,8 +566,8 @@ with competition_tab:
       <div style="padding:16px;border:1px solid #3a414b;border-radius:12px;background:#171c24;"><div style="font-weight:800;color:#f5f7fa;">Must Be Proven</div><div style="color:#cbd3dd;margin-top:8px;line-height:1.5;">A measurable improvement, workable integration and a buyer willing to pay.</div></div>
     </div>
     """, unsafe_allow_html=True)
-    st.markdown("**Current read:** the generic fraud-detection space is already well served on paper. A narrower post-complaint workflow idea may be worth buyer discovery, but we have not yet shown that it is a market gap.")
-    st.markdown("#### What We Still Need To Find Out")
+    st.markdown("**Current read:** The generic fraud-detection space is already well served on paper. A narrower post-complaint workflow idea may be worth buyer discovery, but we have not yet shown that it is a market gap.")
+    st.markdown("#### What we still need to find out")
     unknowns = [
         "Which Indian institutions have this problem, and how often does it happen?",
         "What do current workflows cost in staff time, rework and missed service levels?",
@@ -581,7 +581,7 @@ with competition_tab:
 
 with decision_tab:
     st.markdown("### Recommendation And Evidence: What Should Happen Next?")
-    st.caption("Why this page exists: turn the research into a clear decision, show how confident we should be, and make the next evidence-gathering steps practical.")
+    st.caption("Why this page exists: Turn the research into a clear decision, show how confident we should be, and make the next evidence-gathering steps practical.")
     st.markdown("""
     <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:8px 0 18px;">
       <div style="padding:17px;border-radius:12px;border:1px solid #2d7054;background:#152c23;"><div style="font-size:.78rem;font-weight:800;letter-spacing:.08em;color:#80e0b1;">WHAT WE KNOW</div><div style="font-size:1.05rem;font-weight:800;color:#f3fff8;margin:9px 0;">Activity Is Growing</div><div style="color:#cde6d9;line-height:1.5;">UPI is scaling. RBI also reports domestic payment fraud. The series are useful context, not directly comparable populations.</div></div>
@@ -590,7 +590,7 @@ with decision_tab:
     </div>
     """, unsafe_allow_html=True)
     st.markdown("#### The Current Call")
-    st.markdown("**Specific next move:** do not build a generic fraud-detection product yet. First test whether Indian banks have a costly, repetitive post-complaint workflow that existing tools do not already solve well enough.")
+    st.markdown("**Specific next move:** Do not build a generic fraud-detection product yet. First test whether Indian banks have a costly, repetitive post-complaint workflow that existing tools do not already solve well enough.")
     c1, c2 = st.columns([1, 1])
     with c1:
         st.markdown("""
@@ -610,7 +610,7 @@ with decision_tab:
         """, unsafe_allow_html=True)
 
     st.divider()
-    st.markdown("#### Make The Next Step Specific")
+    st.markdown("#### Make the Next Step Specific")
     st.caption("The first milestone is evidence collection, not software development. A buyer conversation should establish whether the problem exists, how it is handled today, and whether improvement is valuable enough to fund.")
     validation_rows = [
         {"Question To Validate": "Where does work get stuck?", "Who To Ask": "Fraud operations, complaint handling and law-enforcement liaison teams", "Evidence To Request": "An anonymised workflow map, case categories and examples of hand-offs or rework"},
@@ -619,15 +619,15 @@ with decision_tab:
         {"Question To Validate": "Would a solution pay off?", "Who To Ask": "Budget owner, finance and procurement", "Evidence To Request": "Implementation estimate, annual run cost, measurable capacity or cash benefit, and buying process"},
     ]
     st.dataframe(pd.DataFrame(validation_rows), hide_index=True, use_container_width=True)
-    st.markdown("**Decision gate:** only move to a pilot if a real buyer confirms a recurring pain point, baseline data can be measured, the current stack leaves a specific gap, and the estimated incremental benefit can be compared with full implementation and operating costs.")
+    st.markdown("**Decision gate:** Only move to a pilot if a real buyer confirms a recurring pain point, baseline data can be measured, the current stack leaves a specific gap, and the estimated incremental benefit can be compared with full implementation and operating costs.")
     st.divider()
     st.markdown("#### The Next Steps, In Order")
     steps = [
-        ("1", "Talk To Buyers", "Fraud operations, complaint teams, legal or law-enforcement liaison, technology, risk and procurement."),
-        ("2", "Get The Baseline", "Annual case volumes, time per case, rework, SLA misses, escalation rates and cost per case."),
-        ("3", "Map The Current Stack", "What internal tools, vendors and shared-intelligence systems already do, and where work still falls through."),
-        ("4", "Price The Solution", "Integration effort, security requirements, implementation timeline, annual fee and support cost."),
-        ("5", "Run A Measured Pilot", "Track turnaround time, quality, workload, exception rates and cash-realised savings or redeployment."),
+        ("1", "Talk to Buyers", "Fraud operations, complaint teams, legal or law-enforcement liaison, technology, risk and procurement."),
+        ("2", "Get the Baseline", "Annual case volumes, time per case, rework, SLA misses, escalation rates and cost per case."),
+        ("3", "Map the Current Stack", "What internal tools, vendors and shared-intelligence systems already do, and where work still falls through."),
+        ("4", "Price the Solution", "Integration effort, security requirements, implementation timeline, annual fee and support cost."),
+        ("5", "Run a Measured Pilot", "Track turnaround time, quality, workload, exception rates and cash-realised savings or redeployment."),
     ]
     step_cols = st.columns(5)
     for col, (num, heading, body) in zip(step_cols, steps):
@@ -647,7 +647,7 @@ with decision_tab:
         {"Evidence": "RBI Aggregate Series", "Useful For": "Reported domestic payment-fraud trends", "Cannot Establish": "UPI-only fraud rate, final victim loss, preventable loss or vendor opportunity"},
         {"Evidence": "NPCI UPI Monthly Series", "Useful For": "UPI activity scale and growth", "Cannot Establish": "Fraud incidence or causality"},
         {"Evidence": "Synthetic Transaction Sample", "Useful For": "Demonstrating data checks and exploratory analysis", "Cannot Establish": "Real-world fraud patterns, provider performance or control efficacy"},
-        {"Evidence": "Vendor Claims And Case Studies", "Useful For": "Mapping marketed capabilities and research hypotheses", "Cannot Establish": "Independent ROI or comparable outcomes without validation"},
+        {"Evidence": "Vendor Claims and Case Studies", "Useful For": "Mapping marketed capabilities and research hypotheses", "Cannot Establish": "Independent ROI or comparable outcomes without validation"},
         {"Evidence": "Buyer Economics Simulator", "Useful For": "Identifying which assumptions drive a potential business case", "Cannot Establish": "Actual savings before baseline, pricing and pilot outcomes are known"},
     ]
     st.dataframe(pd.DataFrame(evidence_rows), hide_index=True, use_container_width=True)
